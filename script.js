@@ -1,74 +1,103 @@
-// ========================================
-// MENU HAMBURGER MOBILE
-// ========================================
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
+// === MENU SIDEBAR : Active Link Highlighting ===
+document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('.sidebar nav a');
+    links.forEach(link => {
+        if (link.href === window.location.href || window.location.pathname.endsWith(link.getAttribute('href'))) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
 
-    // Toggle menu mobile
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            this.classList.toggle('active');
+// === FADE-IN Animation des sections/cards ===
+document.addEventListener('DOMContentLoaded', function() {
+    const fadeEls = document.querySelectorAll('.card, .hero, .card-section, .mission-details, .competence-card, .contact-card');
+    fadeEls.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+            el.style.transition = 'opacity 0.7s, transform 0.7s';
+            el.style.opacity = 1;
+            el.style.transform = 'none';
+        }, 120);
+    });
+});
+
+// === Progress Bar (animate width on load) ===
+document.addEventListener('DOMContentLoaded', function () {
+    const bars = document.querySelectorAll('.progress-fill');
+    bars.forEach(bar => {
+        const w = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => { bar.style.width = w; }, 350);
+    });
+});
+
+// === IMAGE MODALE pour les traces ===
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.trace-gallery img');
+    if (images.length) {
+        const modal = document.createElement('div');
+        modal.className = 'image-modal';
+        Object.assign(modal.style, {
+            position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh',
+            background: 'rgba(12,15,30,0.97)', display: 'none', zIndex: 9000,
+            alignItems: 'center', justifyContent: 'center', cursor: 'zoom-out'
+        });
+        const img = document.createElement('img');
+        Object.assign(img.style, {
+            maxWidth: '92vw', maxHeight: '88vh', borderRadius: '1.6rem',
+            boxShadow: '0 6px 40px #0f043c'
+        });
+        modal.appendChild(img);
+        document.body.appendChild(modal);
+
+        modal.addEventListener('click',()=>modal.style.display='none');
+        images.forEach(thumb => {
+            thumb.addEventListener('click', function () {
+                img.src = this.src;
+                modal.style.display = 'flex';
+            });
         });
     }
-
-    // Fermer le menu quand on clique sur un lien
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            if (hamburger) {
-                hamburger.classList.remove('active');
-            }
-        });
-    });
-
-    // Fermer le menu si on clique en dehors
-    document.addEventListener('click', function(event) {
-        const isClickInsideNav = navMenu.contains(event.target);
-        const isClickOnHamburger = hamburger && hamburger.contains(event.target);
-
-        if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            if (hamburger) {
-                hamburger.classList.remove('active');
-            }
-        }
-    });
 });
 
-// ========================================
-// SMOOTH SCROLL
-// ========================================
+// === SMOOTH SCROLL pour les ancres sur même page si besoin ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = targetElement.offsetTop - navbarHeight;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+        const id = this.getAttribute('href');
+        if (id && id.length > 1 && document.querySelector(id)) {
+            e.preventDefault();
+            const el = document.querySelector(id);
+            window.scrollTo({top: el.offsetTop - 18, behavior:'smooth'});
         }
     });
 });
 
-// ========================================
-// NAVBAR SCROLLING EFFECT
-// ========================================
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
+// === BOUTON RETOUR EN HAUT ===
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.createElement('button');
+    btn.innerHTML = '↑';
+    btn.className = 'back-to-top';
+    Object.assign(btn.style, {
+        display:'none', position:'fixed', right:'28px', bottom:'36px', zIndex:'50',
+        width:'54px',height:'54px',borderRadius:'50%',fontSize:'2rem',background:'var(--secondary)',
+        color:'#fff',border:'none',boxShadow:'0 4px 30px var(--primary)',cursor:'pointer',
+        transition:'transform 0.35s'
+    });
+    document.body.appendChild(btn);
 
-    if (window.scrollY > 50) {
+    window.addEventListener('scroll', function(){
+        btn.style.display = window.scrollY > 250 ? 'block' : 'none';
+    });
+    btn.addEventListener('mouseenter',function(){ this.style.transform = 'translateY(-7px) scale(1.12)'; });
+    btn.addEventListener('mouseleave',function(){ this.style.transform = 'none'; });
+    btn.onclick = function(){ window.scrollTo({top:0,behavior:'smooth'});}
+});
+
+// === CONSOLE HELLO ===
+console.log('%c Portfolio RT - JS loaded ✓ ','color:#2fdadd;font-weight:bold;font-size:1.08rem;');
         navbar.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
         navbar.style.padding = '0.5rem 0';
     } else {
