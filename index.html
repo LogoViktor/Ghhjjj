@@ -1,222 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio RT - Alternance 2025-2026</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Portfolio RT | Accueil</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">Mon Portfolio RT</div>
-            <ul class="nav-menu">
-                <li><a href="#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="#entreprise" class="nav-link">Entreprise</a></li>
-                <li><a href="#missions" class="nav-link">Missions</a></li>
-                <li><a href="#competences" class="nav-link">Compétences</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
+<body class="background-animated">
+  <aside class="sidebar">
+    <nav>
+      <a href="index.html" class="active">&#127968; Accueil</a>
+      <a href="entreprise.html">&#128188; Entreprise</a>
+      <a href="missions.html">&#128221; Missions</a>
+      <a href="competences.html">&#9881; Compétences</a>
+      <a href="contact.html">&#128233; Contact</a>
     </nav>
-
-    <!-- Section Accueil -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <div class="profile-photo">
-                <img src="profile.jpg" alt="Photo professionnelle">
-            </div>
-            <h1>Prénom NOM</h1>
-            <h2>Étudiant en BUT Réseaux & Télécommunications</h2>
-            <p class="hero-description">
-                Bienvenue sur mon portfolio d'alternance. Ce site présente mon parcours professionnel,
-                mes missions en entreprise et mon évolution dans les compétences du référentiel RT.
-            </p>
-            <div class="hero-buttons">
-                <a href="#missions" class="btn btn-primary">Découvrir mes missions</a>
-                <a href="#contact" class="btn btn-secondary">Me contacter</a>
-            </div>
-        </div>
+  </aside>
+  <main>
+    <section class="hero">
+      <div class="glitch-photo">
+        <img src="profile.jpg" alt="Photo pro" />
+      </div>
+      <h1 class="gradient-text">Prénom NOM</h1>
+      <h2>BUT Réseaux & Télécommunications</h2>
+      <p class="lead">Bienvenue ! Découvre mon parcours et mes missions d’alternance.</p>
+      <div class="hero-buttons">
+        <a href="missions.html" class="btn gradient-btn">Voir mes missions</a>
+        <a href="contact.html" class="btn bordered-btn">Contact</a>
+      </div>
     </section>
-
-    <!-- Section Entreprise -->
-    <section id="entreprise" class="section">
-        <div class="container">
-            <h2 class="section-title">Présentation de l'Entreprise</h2>
-            <div class="entreprise-content">
-                <div class="entreprise-card">
-                    <h3>À propos de l'entreprise</h3>
-                    <p><strong>Nom :</strong> [Nom de l'entreprise]</p>
-                    <p><strong>Secteur d'activité :</strong> [Secteur]</p>
-                    <p><strong>Taille :</strong> [Nombre d'employés]</p>
-                    <p><strong>Description :</strong> [Présentation de l'activité principale de l'entreprise]</p>
-                </div>
-                <div class="entreprise-card">
-                    <h3>Mon rôle et mon service</h3>
-                    <p><strong>Service :</strong> [Nom du service]</p>
-                    <p><strong>Poste :</strong> [Intitulé du poste]</p>
-                    <p><strong>Missions principales :</strong></p>
-                    <ul>
-                        <li>[Mission principale 1]</li>
-                        <li>[Mission principale 2]</li>
-                        <li>[Mission principale 3]</li>
-                    </ul>
-                </div>
-                <div class="entreprise-card full-width">
-                    <h3>Projection Professionnelle</h3>
-                    <p>
-                        [Décrivez ici comment cette alternance s'inscrit dans votre projet professionnel.
-                        Quelles compétences souhaitez-vous développer ? Quel métier visez-vous ?
-                        Comment votre rôle en entreprise contribue-t-il à votre évolution ?]
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Missions -->
-    <section id="missions" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Mes Missions en Entreprise</h2>
-            <!-- Mission 1 -->
-            <div class="mission-card">
-                <div class="mission-header">
-                    <h3>Mission 1 : [Titre de la mission]</h3>
-                    <span class="mission-date">[Période : mois/année - mois/année]</span>
-                </div>
-                <div class="mission-content">
-                    <div class="mission-section">
-                        <h4>Contexte et objectifs</h4>
-                        <p>[Décrivez le contexte de la mission, les objectifs poursuivis, les enjeux techniques ou organisationnels]</p>
-                    </div>
-                    <div class="mission-section">
-                        <h4>Tâches réalisées</h4>
-                        <ul>
-                            <li>[Tâche 1 avec description détaillée]</li>
-                            <li>[Tâche 2 avec outils utilisés]</li>
-                            <li>[Tâche 3 avec résultats obtenus]</li>
-                        </ul>
-                    </div>
-                    <div class="mission-section">
-                        <h4>Compétences et Apprentissages Critiques mobilisés</h4>
-                        <div class="competences-badges">
-                            <span class="badge badge-competence">RT1 - Administrer les réseaux</span>
-                            <span class="badge badge-ac">AC11.03 - Configuration réseau</span>
-                            <span class="badge badge-ac">AC11.05 - Identification dysfonctionnements</span>
-                        </div>
-                    </div>
-                    <div class="mission-section">
-                        <h4>Traces et preuves</h4>
-                        <div class="traces">
-                            <div class="trace-item">
-                                <img src="trace1.jpg" alt="Trace 1">
-                                <p class="trace-caption">[Description de la trace 1]</p>
-                            </div>
-                            <div class="trace-item">
-                                <img src="trace2.jpg" alt="Trace 2">
-                                <p class="trace-caption">[Description de la trace 2]</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mission-section">
-                        <h4>Analyse réflexive et autoévaluation</h4>
-                        <div class="reflexion">
-                            <p><strong>Ce que j'ai appris :</strong> [Décrivez vos apprentissages]</p>
-                            <p><strong>Difficultés rencontrées :</strong> [Expliquez les obstacles et comment vous les avez surmontés]</p>
-                            <p><strong>Évolution de mon autonomie :</strong> [Analysez votre progression]</p>
-                            <p><strong>Niveau de maîtrise atteint :</strong> [Positionnez-vous sur les AC travaillés]</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Mission 2 -->
-            <div class="mission-card">
-                <div class="mission-header">
-                    <h3>Mission 2 : [Titre de la mission]</h3>
-                    <span class="mission-date">[Période]</span>
-                </div>
-                <div class="mission-content">
-                    <p class="info-text">
-                        [Répliquez la structure de la Mission 1 pour chaque mission significative]
-                    </p>
-                </div>
-            </div>
-            <!-- Mission 3 -->
-            <div class="mission-card">
-                <div class="mission-header">
-                    <h3>Mission 3 : [Titre de la mission]</h3>
-                    <span class="mission-date">[Période]</span>
-                </div>
-                <div class="mission-content">
-                    <p class="info-text">
-                        [Répliquez la structure de la Mission 1 pour chaque mission significative]
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Bilan par Compétence -->
-    <section id="competences" class="section">
-        <div class="container">
-            <h2 class="section-title">Bilan par Compétence</h2>
-            <!-- Compétence RT1 -->
-            <div class="competence-card">
-                <h3>RT1 - Administrer les réseaux et l'Internet</h3>
-                <p class="competence-niveau">Niveau visé : Assister l'administrateur du réseau</p>
-                <div class="bilan-content">
-                    <h4>Synthèse de mes apprentissages</h4>
-                    <p>[Faites le lien entre les différentes missions qui ont mobilisé cette compétence.
-                    Quels AC avez-vous travaillés ? Comment avez-vous progressé ?]</p>
-                    <h4>Complémentarité IUT / Entreprise</h4>
-                    <p>[Expliquez comment les enseignements de l'IUT et les missions en entreprise
-                    se sont complétés pour développer cette compétence]</p>
-                    <h4>Niveau de maîtrise et axes de progrès</h4>
-                    <ul>
-                        <li><strong>Points forts :</strong> [Listez vos points forts]</li>
-                        <li><strong>Points à améliorer :</strong> [Identifiez vos axes de progression]</li>
-                        <li><strong>Actions envisagées :</strong> [Indiquez comment vous comptez progresser]</li>
-                    </ul>
-                </div>
-                <div class="progress-section">
-                    <h4>Progression sur les Apprentissages Critiques</h4>
-                    <div class="ac-progress">
-                        <div class="ac-item">
-                            <span class="ac-label">AC11.01 - Lois de l'électricité</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 70%"></div>
-                            </div>
-                            <span class="progress-text">70%</span>
-                        </div>
-                        <div class="ac-item">
-                            <span class="ac-label">AC11.02 - Architecture systèmes numériques</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 85%"></div>
-                            </div>
-                            <span class="progress-text">85%</span>
-                        </div>
-                        <div class="ac-item">
-                            <span class="ac-label">AC11.03 - Configuration réseau local</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 90%"></div>
-                            </div>
-                            <span class="progress-text">90%</span>
-                        </div>
-                        <!-- Ajoutez les autres AC selon votre niveau -->
-                    </div>
-                </div>
-            </div>
-            <!-- Compétence RT2 -->
-            <div class="competence-card">
-                <h3>RT2 - Connecter les entreprises et les usagers</h3>
-                <p class="competence-niveau">Niveau visé : Découvrir les transmissions et la ToIP</p>
-                <div class="bilan-content">
+  </main>
+  <footer>
+    <span>&copy; 2025 - Portfolio RT - Prénom NOM</span>
+    <span class="quote">“Innover, connecter, sécuriser”</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>                <div class="bilan-content">
                     <p>[Répliquez la structure de RT1 pour chaque compétence du référentiel]</p>
                 </div>
             </div>
